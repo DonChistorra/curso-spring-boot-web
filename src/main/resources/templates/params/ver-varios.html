@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title th:text="${basicos.get('titulo')}" ></title>
+</head>
+<body>
+<h1 th:text="${basicos.get('mensaje_bienvenida')}"></h1>
+
+<span th:text="${textoRecibido}"></span><br/>
+<span th:text="${numeroRecibido}"></span><br/>
+<br/>
+<a th:href="@{/params/string(texto='Redirected from Index')}">Enlace a /params/string(texto='Redirected from Index')</a><br/>
+<a th:href="@{/params/string(texto=${textoRecibido}, numero=${numeroRecibido})}">Enlace a /params/string(texto=${textoRecibido}, numero=${numeroRecibido}))</a>
+</body>
+</html>
