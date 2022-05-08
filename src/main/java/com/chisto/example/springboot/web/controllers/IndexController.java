@@ -56,6 +56,9 @@ public class IndexController {
 		return "listar";
 	}
 
+	/* Esta anotación hace al objeto "ususarios" estar disponible para
+	 * las distintas vistas llamadas desde este controlador
+	 */
 	@ModelAttribute("usuarios")
 	public List<Usuario> poblarUsuarios(){
 		List<Usuario> usuarios = Arrays.asList(
