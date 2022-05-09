@@ -3,9 +3,13 @@
 <head>
 <meta charset="UTF-8"/>
 <title th:text="${basicos.titulo}" ></title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
 </head>
 <body>
-<h1 th:text="${basicos.mensaje_bienvenida}"></h1>
+<h1 class="color-azul" th:text="${basicos.mensaje_bienvenida}"></h1>
+<h2 class="color-rojo" th:text="${basicos.mensaje_bienvenida}"></h2>
+<img th:src="@{/images/imagen_spring.png}" /> <br />
+
 <a th:href="@{/variables/texto/Saludo base}">Enlace a /variables/texto/Saludo base</a><br/>
 <a th:href="@{/variables/varios/Despedida base/15}">Enlace a /variables/varios/Saludo base/15</a><br/>
 </body>
