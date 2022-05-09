@@ -3,6 +3,7 @@ package com.chisto.example.springboot.web.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,12 +34,16 @@ public class EjemploPathVariableController {
 		return "/variables/varios";
 	}
 	
+	@Value("${controllers.path-variable.titulo}")
+	private String titulo;
+	@Value("${controllers.path-variable.mensaje-bienvenida}")
+	private String mensaje_bienvenida;
 	
 	@ModelAttribute("basicos")
 	public Map<String, String> poblarBasicos() {
 		Map<String, String> usuarios = new HashMap<String, String>();
-		usuarios.put("titulo", "Titulo configurado por Spring - PathVariables");
-		usuarios.put("mensaje_bienvenida", "Welcome Springer! - Prácticas con @PathVariable");
+		usuarios.put("titulo", titulo);
+		usuarios.put("mensaje_bienvenida", mensaje_bienvenida);
 		return usuarios;
 	}
 }
