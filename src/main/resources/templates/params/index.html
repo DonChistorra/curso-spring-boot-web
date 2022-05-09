@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title th:text="${basicos.titulo}" ></title>
+</head>
+<body>
+<h1 th:text="${basicos.mensaje_bienvenida}"></h1>
+<a th:href="@{/params/string(texto='Redirected from Index')}">Enlace a /params/string(texto='Redirected from Index')</a><br/>
+</body>
+</html>
