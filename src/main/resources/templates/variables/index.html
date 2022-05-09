@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title th:text="${basicos.titulo}" ></title>
+</head>
+<body>
+<h1 th:text="${basicos.mensaje_bienvenida}"></h1>
+<a th:href="@{/variables/texto/Saludo base}">Enlace a /variables/texto/Saludo base</a><br/>
+<a th:href="@{/variables/varios/Despedida base/15}">Enlace a /variables/varios/Saludo base/15</a><br/>
+</body>
+</html>
