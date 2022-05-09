@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,11 +16,17 @@ import com.chisto.example.springboot.models.Usuario;
 @Controller
 @RequestMapping("/web")
 public class IndexController {
+	
+	@Value("${controllers.index.titulo}")
+	private String titulo;
+	@Value("${controllers.index.mensaje-bienvenida}")
+	private String mensaje_bienvenida;
+	
 
 	@RequestMapping(value = {"", "/", "/home", "/index"}, method = RequestMethod.GET)
 	public String index(Model model) {
-		model.addAttribute("titulo", "Titulo configurado por Spring");
-		model.addAttribute("mensaje_bienvenida", "Welcome Springer!");
+		model.addAttribute("titulo", titulo);
+		model.addAttribute("mensaje_bienvenida", mensaje_bienvenida);
 		String result = "index";
 		return result;
 	}
@@ -32,8 +39,8 @@ public class IndexController {
 		usuario.setApellido1("López");
 		usuario.setEmail("fake@fakemail.com");
 		model.addAttribute("usuario", usuario);
-		model.addAttribute("titulo", "Titulo configurado por Spring");
-		model.addAttribute("mensaje_bienvenida", "Welcome Springer!");
+		model.addAttribute("titulo", titulo);
+		model.addAttribute("mensaje_bienvenida", mensaje_bienvenida);
 		
 		return "perfil";
 	}
@@ -50,8 +57,8 @@ public class IndexController {
 		usuarios.add(usuario3);
 		
 		model.addAttribute("usuarios", usuarios);
-		model.addAttribute("titulo", "Titulo configurado por Spring");
-		model.addAttribute("mensaje_bienvenida", "Welcome Springer!");
+		model.addAttribute("titulo", titulo);
+		model.addAttribute("mensaje_bienvenida", mensaje_bienvenida);
 		
 		return "listar";
 	}
